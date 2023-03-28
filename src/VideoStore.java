@@ -140,7 +140,7 @@ public class VideoStore {
 		System.out.println("10: To print in-store videos");// print in-store videos
 		System.out.println("11: To print checked out videos");// print in-store videos
 		System.out.println("13: To exit"); // exit the program
-		//test 22
+		
 	}
 
 	public static void main(String[] args) {
