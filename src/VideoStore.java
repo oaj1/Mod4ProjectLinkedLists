@@ -52,8 +52,7 @@ public class VideoStore {
 			Integer elapsedInt = new Integer((int) elapsed);
 			@SuppressWarnings("unused")
 			String elapsedString = elapsedInt.toString();
-			//myWriter.write((int) elapsed);
-			myWriter.write(elapsedString);
+			myWriter.write(elapsedString + " ms");
 			myWriter.close();
 			System.out.println("Successfully wrote to the file");
 		}catch(IOException e) {
