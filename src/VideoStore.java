@@ -1,3 +1,4 @@
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.Random;
@@ -42,9 +43,23 @@ public class VideoStore {
 			
 
 		}
-		long end = System.currentTimeMillis();
+		long end =  System.currentTimeMillis();
 		long elapsed = end-start;
 		System.out.println("Time Elapsed " + elapsed + " ms");
+		try {
+			FileWriter myWriter = new FileWriter("performance.txt");
+			@SuppressWarnings("removal")
+			Integer elapsedInt = new Integer((int) elapsed);
+			@SuppressWarnings("unused")
+			String elapsedString = elapsedInt.toString();
+			//myWriter.write((int) elapsed);
+			myWriter.write(elapsedString);
+			myWriter.close();
+			System.out.println("Successfully wrote to the file");
+		}catch(IOException e) {
+			System.out.println("An error occurred");
+			e.printStackTrace();
+		}
 	}
 
 	// @SuppressWarnings("rawtypes")
